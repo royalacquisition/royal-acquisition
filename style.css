@@ -160,6 +160,14 @@ ul li {
   height: 600px;
 }
 
+.flow-svg {
+  width: 100%;
+  max-width: 1200px;
+  height: auto; /* maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* center */
+}
+
 /* Step circles */
 .step circle {
   transition: transform 0.3s, filter 0.3s;
@@ -308,6 +316,7 @@ footer {
     height: 800px;
   }
 }
+
 
 
 
