@@ -53,20 +53,18 @@ header {
 }
 
 .logo {
-  position: relative;          /* establish positioning context */
-  z-index: 10;                 /* raise the logo layer above other elements */
+  position: relative;   /* establishes positioning context */
+  z-index: 10;          /* ensures logo is above other elements */
 }
 
 .logo img {
-  position: absolute;
-  z-index: 9999;
-  height: 140px;
+  height: 80px;           /* proper logo size */
   width: auto;
   background-color: white;
-  padding: 10px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: block;
 }
-}
-
 
 nav a {
   margin-left: 20px;
@@ -151,28 +149,22 @@ ul li {
   justify-content: center;
   margin-top: 40px;
   overflow-x: auto;
-  padding-bottom: 20px; /* add some spacing at bottom */
+  padding-bottom: 20px;
 }
 
 .flow-svg {
   width: 100%;
   max-width: 1200px;
-  height: 600px;
-}
-
-.flow-svg {
-  width: 100%;
-  max-width: 1200px;
-  height: auto; /* maintain aspect ratio */
+  height: auto; /* maintains aspect ratio */
   display: block;
-  margin: 0 auto; /* center */
+  margin: 0 auto;
 }
 
 /* Step circles */
 .step circle {
   transition: transform 0.3s, filter 0.3s;
   cursor: pointer;
-  stroke: #C9A227; /* optional outline for visibility */
+  stroke: #C9A227;
   stroke-width: 2;
 }
 
@@ -204,30 +196,6 @@ ul li {
 /* Animated arrows */
 .flow-svg circle[fill="#C9A227"] {
   filter: drop-shadow(0 0 8px #C9A227);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .flow-svg {
-    height: 800px;
-  }
-
-  .step text {
-    font-size: 12px;
-  }
-
-  .step image {
-    width: 30px !important;
-    height: 30px !important;
-    x: -15px !important;
-    y: -15px !important;
-  }
-
-  /* Optional: stack steps vertically for very small screens */
-  .flowchart-container {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 /* ------------------------- TESTIMONIALS ------------------------- */
@@ -315,12 +283,20 @@ footer {
   .flow-svg {
     height: 800px;
   }
+
+  .step text {
+    font-size: 12px;
+  }
+
+  .step image {
+    width: 30px !important;
+    height: 30px !important;
+    x: -15px !important;
+    y: -15px !important;
+  }
+
+  .flowchart-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
-
-
-
-
-
-
-
