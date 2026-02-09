@@ -1,302 +1,183 @@
-/* ------------------------- GENERAL STYLES ------------------------- */
-body {
+/* Reset & Base */
+* {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;
-  color: #222;
-  background-color: #fff;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-h2 {
-  color: #0A2A8F;
-  margin-bottom: 20px;
+body {
+  line-height: 1.6;
+  background: #f9f9f9;
 }
 
-section {
-  padding: 60px 20px;
-}
-
-.section-light {
-  background-color: #f9f9f9;
-}
-
-.section-white {
-  background-color: #fff;
-}
-
-.section-wrapper {
+/* Container */
+.container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  padding: 0 20px;
 }
 
-/* ------------------------- HEADER ------------------------- */
+/* Header */
 header {
+  width: 100%;
+  background: #fff;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: #0A2A8F;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header .logo img {
+  height: 50px;
+}
+
+/* Navigation */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 10px 5px;
+  display: block;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 250px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-header {
+  font-weight: 700;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #555;
+}
+
+.divider {
+  border-top: 1px solid #eee;
+  margin: 8px 0;
+}
+
+.dropdown-menu a {
+  padding: 8px 15px;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Book Consultation Button */
+.btn-consult {
+  background: #007bff;
   color: #fff;
-  position: sticky;
-  top: 0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-consult:hover {
+  background: #0056b3;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   z-index: 1000;
 }
 
-.logo {
-  position: relative;   /* establishes positioning context */
-  z-index: 10;          /* ensures logo is above other elements */
-}
-
-.logo img {
-  height: 80px;           /* proper logo size */
-  width: auto;
-  background-color: white;
-  padding: 5px 10px;
-  border-radius: 8px;
-  display: block;
-}
-
-nav a {
-  margin-left: 20px;
-  font-weight: 600;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #C9A227;
-}
-
-/* ------------------------- HERO SECTION ------------------------- */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  background: #F0F0F0;
-  padding: 60px 20px;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.hero-text h1 {
-  color: #0A2A8F;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.hero-text p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.hero-buttons a {
-  display: inline-block;
-  margin-right: 20px;
-  padding: 12px 25px;
-  border-radius: 5px;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.btn-primary {
-  background: #C9A227;
-  color: #0A2A8F;
-}
-
-.btn-primary:hover {
+/* Sections */
+section {
+  padding: 100px 20px 60px;
   background: #fff;
-  color: #C9A227;
-  border: 1px solid #C9A227;
+  margin-top: 80px;
 }
 
-.btn-secondary {
-  background: #0A2A8F;
-  color: #C9A227;
+section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007bff;
 }
 
-.btn-secondary:hover {
-  background: #C9A227;
-  color: #0A2A8F;
+section p, section ul, section ol {
+  margin-bottom: 15px;
+  color: #555;
 }
 
-.hero-image img {
-  max-width: 100%;
-  border-radius: 10px;
+section ul, section ol {
+  padding-left: 20px;
 }
 
-/* ------------------------- LIST STYLES ------------------------- */
-ul li {
+section ul li, section ol li {
   margin-bottom: 10px;
 }
 
-/* ------------------------- FLOWCHART / SYSTEM ------------------------- */
-.flowchart-container {
+/* Forms */
+form {
   display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  overflow-x: auto;
-  padding-bottom: 20px;
-}
-
-.flow-svg {
-  width: 100%;
-  max-width: 1200px;
-  height: auto; /* maintains aspect ratio */
-  display: block;
-  margin: 0 auto;
-}
-
-/* Step circles */
-.step circle {
-  transition: transform 0.3s, filter 0.3s;
-  cursor: pointer;
-  stroke: #C9A227;
-  stroke-width: 2;
-}
-
-/* Hover effects for steps */
-.step:hover circle {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 15px #C9A227);
-}
-
-/* Step text */
-.step text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  fill: #C9A227;
-  pointer-events: none; /* ensures hovering circle doesn't block text */
-}
-
-/* Step icon */
-.step image {
-  transition: transform 0.3s;
-}
-
-/* Hover effect on icon */
-.step:hover image {
-  transform: scale(1.2);
-}
-
-/* Animated arrows */
-.flow-svg circle[fill="#C9A227"] {
-  filter: drop-shadow(0 0 8px #C9A227);
-}
-
-/* ------------------------- TESTIMONIALS ------------------------- */
-.testimonial-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
   margin-top: 20px;
 }
 
-.testimonial-box {
-  background: #0A2A8F;
-  color: #C9A227;
-  padding: 20px;
-  border-radius: 10px;
-  flex: 1;
-  min-width: 250px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* ------------------------- CONTACT FORM ------------------------- */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  margin-bottom: 15px;
+input, textarea {
   padding: 12px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-.contact-form button {
-  width: fit-content;
-  padding: 12px 25px;
+button {
+  padding: 12px;
+  border-radius: 6px;
   border: none;
-  border-radius: 5px;
-  background: #C9A227;
-  color: #0A2A8F;
+  background: #007bff;
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
 }
 
-.contact-form button:hover {
-  background: #0A2A8F;
-  color: #C9A227;
-}
-
-/* ------------------------- FOOTER ------------------------- */
-footer {
-  text-align: center;
-  background: #0A2A8F;
-  color: #fff;
-  padding: 20px;
-}
-
-/* ------------------------- RESPONSIVE ------------------------- */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    margin: 10px 5px;
-    display: inline-block;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-buttons a {
-    margin-bottom: 10px;
-  }
-
-  .flow-svg {
-    height: 800px;
-  }
-
-  .step text {
-    font-size: 12px;
-  }
-
-  .step image {
-    width: 30px !important;
-    height: 30px !important;
-    x: -15px !important;
-    y: -15px !important;
-  }
-
-  .flowchart-container {
-    flex-direction: column;
-    align-items: center;
-  }
+button:hover {
+  background: #0056b3;
 }
